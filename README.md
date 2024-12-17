@@ -7,4 +7,4 @@ For the backend services, we can use **TypeScript + Node.js**.
 - **HTTP Client:** [axios](https://axios-http.com/) for making requests to external data providers.
 - **Environment Configuration:** [dotenv](https://github.com/motdotla/dotenv) for loading environment variables.
 - **Linting and Formatting:** [eslint](https://eslint.org/) and [prettier](https://prettier.io/).
-- **Testing:** [jest](https://jestjs.io/) for unit tests.
+- **Testing:** [vitest](https://vitest.dev/) for unit tests.
