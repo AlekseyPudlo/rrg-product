@@ -13,7 +13,12 @@ function getEnvVar(key: string): string {
 }
 
 // Fetch and validate all required environment variables
-const DATABASE_URL = getEnvVar('DATABASE_URL');
+const DB_HOST = getEnvVar('DB_HOST');
+const DB_PORT = getEnvVar('DB_PORT');
+const DB_USER = getEnvVar('DB_USER');
+const DB_PASSWORD = getEnvVar('DB_PASSWORD');
+const DB_NAME = getEnvVar('DB_NAME');
+const DATABASE_URL = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 const MARKET_DATA_PROVIDER = getEnvVar('MARKET_DATA_PROVIDER');
 const DATA_PROVIDER_URL = getEnvVar('DATA_PROVIDER_URL');
 const API_KEY = getEnvVar('API_KEY');

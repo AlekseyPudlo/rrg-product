@@ -1,4 +1,4 @@
-import { config } from './config/index';
+import { config } from './src/config/index';
 
 module.exports = {
   client: 'pg',

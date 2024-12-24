@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    build: .
+    # or just use 'image: postgres:latest' if you don't need a custom Dockerfile
+    container_name: my-postgres-container
+    environment:
+      # Adjust these environment variables as needed
+      #POSTGRES_USER: myuser
+      #POSTGRES_PASSWORD: mypassword
+      #POSTGRES_DB: mydatabase
+      POSTGRES_USER: ${process.env.DB_USER}
+      POSTGRES_PASSWORD: ${process.env.DB_PASSWORD}
+      POSTGRES_DB: ${process.env.DB_NAME}
+    ports:
+      - "${process.env.DB_PORT}:${process.env.DB_PORT}"
+    # ----------------------------------------------------------------
+    # If you want a truly *ephemeral* DB each time, omit volumes OR
+    # remove them when bringing down (docker-compose down -v).
+    # ----------------------------------------------------------------
+    # volumes:
+    #   - pgdata:/var/lib/postgresql/data
+
+# Uncomment to define named volumes if you want persistent data
+# volumes:
+#   pgdata:
