@@ -25,7 +25,7 @@ export interface Instrument {
    * - 'sector': A sector ETF or fund that is being analyzed
    * - 'benchmark': The reference index against which sectors are compared
    */
-  type: 'sector' | 'benchmark';
+  type: 'sector' | 'benchmark' | 'stock';
 }
 
 /**
