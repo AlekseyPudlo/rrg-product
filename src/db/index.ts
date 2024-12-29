@@ -3,3 +3,8 @@ import Knex from 'knex';
 const knexConfig = require('../../knexfile');
 
 export const knex = Knex(knexConfig);
+
+export * from './models';
+export * from './instrumentRepo';
+export * from './priceRepo';
+export * from './rrgRepo';
