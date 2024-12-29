@@ -1,3 +1,5 @@
+import { QuadrantType, InstrumentType } from './types';
+
 /**
  * Domain models. 
  * These define the shape of data we store and retrieve.
@@ -25,7 +27,7 @@ export interface Instrument {
    * - 'sector': A sector ETF or fund that is being analyzed
    * - 'benchmark': The reference index against which sectors are compared
    */
-  type: 'sector' | 'benchmark' | 'stock';
+  type: InstrumentType;
 }
 
 /**
@@ -100,5 +102,5 @@ export interface RRGPoint {
    * - lagging: Weak relative strength and momentum (bottom left)
    * - improving: Weak relative strength but improving momentum (top left)
    */
-  quadrant: 'leading' | 'weakening' | 'lagging' | 'improving';
+  quadrant: QuadrantType;
 }
