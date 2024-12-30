@@ -1,6 +1,7 @@
+import { Knex } from 'knex';
 import { config } from './src/config/index';
 
-module.exports = {
+const knexConfig: Knex.Config = {
   client: 'pg',
   connection: config.databaseUrl,
   migrations: {
@@ -12,3 +13,5 @@ module.exports = {
     directory: './src/db/seeds'
   }
 };
+
+export default knexConfig;

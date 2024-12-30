@@ -1,9 +1,10 @@
 import Knex from 'knex';
-// Since we use "module.exports" in knexfile, we need to import that as a JS module
-const knexConfig = require('../../knexfile');
+import knexConfig from '../../knexfile';
 
-export const knex = Knex(knexConfig);
+//const knexConfig = require('../../knexfile');
+const knex = Knex(knexConfig);
 
+export default knex;
 export * from './models';
 export * from './instrumentRepo';
 export * from './priceRepo';
