@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
+    "migrate": "",
     "test": "vitest",
     "test:db": "vitest run tests/db",
     "test:unit": "vitest run tests/unit",

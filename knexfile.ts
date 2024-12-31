@@ -4,10 +4,11 @@ import { config } from './src/config/index';
 const knexConfig: { [key: string]:Knex.Config } = {
   test: {
     client: 'pg',
-    connection: {},
+    //connection: {},
     migrations: {
       directory: './src/db/migrations',
       extension: 'ts',
+      loadExtensions: ['.js', '.ts'],
     },
     seeds: {
         directory: './src/db/seeds'
@@ -18,7 +19,8 @@ const knexConfig: { [key: string]:Knex.Config } = {
     connection: config.databaseUrl,
     migrations: {
       directory: './src/db/migrations',
-      extension: 'ts'
+      extension: 'ts',
+      loadExtensions: ['.js', '.ts'],
     },
     // Also specify a seeds directory if plan to seed test data.
     seeds: {

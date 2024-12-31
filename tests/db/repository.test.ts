@@ -1,4 +1,4 @@
-import { describe, beforeEach, it, expect, vi, beforeAll } from 'vitest';
+import { describe, beforeEach, it, expect, beforeAll } from 'vitest';
 import { initializeTestDb, getKnex } from './utilities/testDBSetup';
 import { 
   Instrument, RRGPoint, InstrumentPrice,
