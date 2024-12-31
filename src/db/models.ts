@@ -1,7 +1,7 @@
 import { QuadrantType, InstrumentType } from './types';
 
 /**
- * Domain models. 
+ * Domain models.
  * These define the shape of data we store and retrieve.
  */
 
@@ -14,13 +14,13 @@ export interface Instrument {
    * Unique identifier for the instrument, typically the ticker symbol
    * @example 'XLK' for Technology Select Sector SPDR Fund
    */
-  id: string;              
+  id: string;
 
   /**
    * Full name/description of the instrument
-   * @example 'Technology Sector SPDR' 
+   * @example 'Technology Sector SPDR'
    */
-  name: string;            
+  name: string;
 
   /**
    * Classification of the instrument:
@@ -38,13 +38,13 @@ export interface InstrumentPrice {
    * Unique identifier for the price record
    * Auto-incremented by the database
    */
-  id?: number;             
+  id?: number;
 
   /**
    * Reference to the instrument this price belongs to
    * Foreign key to Instrument.id
    */
-  instrumentId: string;    
+  instrumentId: string;
 
   /**
    * The date this price was recorded
@@ -55,7 +55,7 @@ export interface InstrumentPrice {
    * The closing price of the instrument on this date
    */
   closePrice: number;
-  
+
   // Additional fields if needed: openPrice, highPrice, lowPrice, volume
 }
 
@@ -68,13 +68,13 @@ export interface RRGPoint {
    * Unique identifier for the RRG point
    * Auto-incremented by the database
    */
-  id?: number;            
+  id?: number;
 
   /**
    * Reference to the instrument this RRG point belongs to
    * Foreign key to Instrument.id
    */
-  instrumentId: string;    
+  instrumentId: string;
 
   /**
    * The date this RRG point was calculated

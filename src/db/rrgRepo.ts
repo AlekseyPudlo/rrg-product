@@ -8,7 +8,7 @@ import { RRGPoint } from './models';
 /**
  * Saves multiple RRG point records in a single batch operation
  * Uses PostgreSQL's upsert functionality to handle duplicate records
- * 
+ *
  * @param points - Array of RRGPoint objects to save
  * @throws {Error} If the database operation fails
  */
@@ -20,7 +20,7 @@ export async function saveRRGPoints(points: RRGPoint[]): Promise<void> {
     date: point.date,
     rs_ratio: point.rsRatio,
     rs_momentum: point.rsMomentum,
-    quadrant: point.quadrant
+    quadrant: point.quadrant,
   }));
 
   await knex('rrg_points')
@@ -31,7 +31,7 @@ export async function saveRRGPoints(points: RRGPoint[]): Promise<void> {
 
 /**
  * Retrieves RRG point records within a specified date range
- * 
+ *
  * @param startDate - The beginning of the date range (inclusive)
  * @param endDate - The end of the date range (inclusive)
  * @returns Array of RRGPoint records sorted by date ascending
@@ -53,6 +53,6 @@ export async function getRRGPointsByDateRange(
     date: new Date(rec.date),
     rsRatio: Number(rec.rs_ratio),
     rsMomentum: Number(rec.rs_momentum),
-    quadrant: rec.quadrant
+    quadrant: rec.quadrant,
   }));
 }

@@ -8,7 +8,7 @@ import { YahooProvider } from '../providers/YahooProvider';
 
 export function getProvider(): MarketDataProvider {
   const { marketDataProvider, dataProviderUrl, apiKey } = config;
-  
+
   // Switch or if-else based on marketDataProvider
   switch (marketDataProvider) {
     case 'yahoo':

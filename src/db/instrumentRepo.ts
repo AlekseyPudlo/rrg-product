@@ -10,13 +10,15 @@ import { Instrument } from './models';
  * @param instrument - The instrument data to insert/update
  * @throws {Error} If the database operation fails
  */
-export async function createOrUpdateInstrument(instrument: Instrument): Promise<void> {
+export async function createOrUpdateInstrument(
+  instrument: Instrument
+): Promise<void> {
   // Using PostgreSQL's "ON CONFLICT (id) DO UPDATE" approach:
   await knex('instruments')
     .insert({
       id: instrument.id,
       name: instrument.name,
-      type: instrument.type
+      type: instrument.type,
     })
     .onConflict('id')
     .merge(); // or .ignore() if we only want to insert and skip updates
@@ -28,7 +30,9 @@ export async function createOrUpdateInstrument(instrument: Instrument): Promise<
  * @returns The matching instrument record, or null if not found
  * @throws {Error} If the database query fails
  */
-export async function getInstrumentById(id: string): Promise<Instrument | null> {
+export async function getInstrumentById(
+  id: string
+): Promise<Instrument | null> {
   const record = await knex('instruments').where({ id }).first();
   return record || null;
 }

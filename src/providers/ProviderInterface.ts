@@ -1,4 +1,1 @@
-export interface MarketDataProvider {
-    
-    
-}
+export interface MarketDataProvider {}

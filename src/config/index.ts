@@ -26,12 +26,12 @@ const DATABASE_URL = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}
 const MARKET_DATA_PROVIDER = getEnvVar('MARKET_DATA_PROVIDER');
 const DATA_PROVIDER_URL = getEnvVar('DATA_PROVIDER_URL');
 const API_KEY = getEnvVar('API_KEY');
-const PORT = process.env.PORT || '3000';  // default to 3000 if not specified
+const PORT = process.env.PORT || '3000'; // default to 3000 if not specified
 
 export const config = {
-    databaseUrl: DATABASE_URL,
-    marketDataProvider: MARKET_DATA_PROVIDER.toLowerCase(), // normalize case
-    dataProviderUrl: DATA_PROVIDER_URL,
-    apiKey: API_KEY,
-    port: parseInt(PORT, 10),
-  };
+  databaseUrl: DATABASE_URL,
+  marketDataProvider: MARKET_DATA_PROVIDER.toLowerCase(), // normalize case
+  dataProviderUrl: DATA_PROVIDER_URL,
+  apiKey: API_KEY,
+  port: parseInt(PORT, 10),
+};

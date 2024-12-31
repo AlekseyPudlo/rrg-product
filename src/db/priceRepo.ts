@@ -8,7 +8,7 @@ import { InstrumentPrice } from './models';
 /**
  * Saves multiple price records in a single batch operation
  * Uses PostgreSQL's upsert functionality to handle duplicate records
- * 
+ *
  * @param prices - Array of InstrumentPrice objects to save
  * @throws {Error} If the database operation fails
  */
@@ -32,7 +32,7 @@ export async function savePrices(prices: InstrumentPrice[]): Promise<void> {
 
 /**
  * Retrieves price records for a specific instrument within a date range
- * 
+ *
  * @param instrumentId - The unique identifier of the instrument
  * @param startDate - The beginning of the date range (inclusive)
  * @param endDate - The end of the date range (inclusive)
