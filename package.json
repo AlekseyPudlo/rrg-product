@@ -1,6 +1,7 @@
 {
   "name": "rrg-product",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "keywords": [],
@@ -8,7 +9,11 @@
   "license": "ISC",
   "scripts": {
     "test": "vitest",
-    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx}\""
+    "test:db": "vitest run tests/db",
+    "test:unit": "vitest run tests/unit",
+    "check-format": "prettier --check \"src/**/*.{js,ts,jsx,tsx}\"",
+    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx}\"",
+    "lint": "eslint \"src/**/*.{js,ts,jsx,tsx}\""
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
