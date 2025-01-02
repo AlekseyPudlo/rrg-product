@@ -1,4 +1,4 @@
-import { QuadrantType, InstrumentType } from './types';
+import { QuadrantType, InstrumentType } from '../types';
 
 /**
  * Domain models.

@@ -6,9 +6,12 @@
       "strict": true,
       "esModuleInterop": true,
       "rootDir": ".",
-      "outDir": "./dist"
+      "outDir": "./dist",
+      "moduleResolution": "Node",
+      "resolveJsonModule": true,
+      "isolatedModules": true
     },
     "include": ["src"],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "tests"]
   }
   
