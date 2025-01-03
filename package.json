@@ -9,6 +9,8 @@
   "license": "ISC",
   "scripts": {
     "migrate": "",
+    "knex": "ts-node -r ts-node/register ./node_modules/.bin/knex",
+
     "test": "vitest",
     "test:db": "vitest run tests/db",
     "test:unit": "vitest run tests/unit",

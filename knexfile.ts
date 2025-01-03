@@ -1,31 +1,16 @@
 import { Knex } from 'knex';
 import { config } from './src/config/index';
 
-const knexConfig: { [key: string]:Knex.Config } = {
-  test: {
-    client: 'pg',
-    //connection: {},
-    migrations: {
-      directory: './src/db/migrations',
-      extension: 'ts',
-      loadExtensions: ['.js', '.ts'],
-    },
-    seeds: {
-        directory: './src/db/seeds'
-      }
+const knexConfig: Knex.Config = {
+  client: 'pg',
+  connection: config.databaseUrl,
+  migrations: {
+    directory: './src/db/migrations',
+    extension: 'ts',
+    loadExtensions: ['.js', '.ts'],
   },
-  development: {
-    client: 'pg',
-    connection: config.databaseUrl,
-    migrations: {
-      directory: './src/db/migrations',
-      extension: 'ts',
-      loadExtensions: ['.js', '.ts'],
-    },
-    // Also specify a seeds directory if plan to seed test data.
-    seeds: {
-      directory: './src/db/seeds'
-    }
+  seeds: {
+    directory: './src/db/seeds'
   }
 }
 
